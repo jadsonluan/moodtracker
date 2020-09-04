@@ -1,0 +1,143 @@
+* { margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px;
+}
+
+div#moods {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 25px;
+}
+
+div#moods div.label {
+    margin-right: 3px;
+    margin-bottom: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+div#moods div.label {
+    padding: 2px 10px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+div#moods div.label:hover {
+    opacity: 1;
+}
+
+#form {
+    display: flex;
+    flex-flow: column wrap;
+    width: 300px;
+    padding: 20px;
+}
+
+#title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#why {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+#why h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#why input {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+#why input:focus {
+    border-color: deepskyblue;
+}
+
+#actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#actions button {
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    color: white;
+    font-family: 'Pacifico';
+}
+
+#send-btn { background-color: lawngreen; }
+#cancel-btn { background-color: crimson; }
+
+div.loving { background: deeppink; }
+div.happy { background: lawngreen; }
+div.normal { background: lightgrey; }
+div.rage { background: crimson; }
+div.anxious { background: orange; }
+div.sad { background: blueviolet; }
+div.depressed { background: navy; }
+div.add { background: #222; }
+
+div#tracker { margin-left: 30px; }
+div#tracker h1 { margin-bottom: 20px; }
+div#tracker ul { list-style-type: none; }
+div#tracker ul .label {
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-left: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+div#tracker ul li {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+div#tracker ul li p { padding: 3px 10px; }
+
+div.time { background-color: #333; }
+
+div#other-visualizations {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#other-visualizations button {
+    border: none;
+    background-color: deepskyblue;
+    border: 2px solid deepskyblue;
+    font-size: 14px;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+div#other-visualizations button:hover {
+    background-color: rgb(0, 89, 255);
+    border-color: rgb(0, 89, 255);
+}
