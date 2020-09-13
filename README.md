@@ -10,12 +10,9 @@ Ainda na tela inicial, há um histórico dos últimos registros de sentimentos c
 
 É possível ter uma visualização mais trabalhada desses registros em outras formas como, por exemplo, um calendário com seus registros dia-a-dia, análise de como foi seu último mês/ano, etc.
 
-### Protótipo
+### Protótipo :rocket:
 
 Você pode visualizar uma prévia [aqui](https://jadsonluan.github.io/moodtracker/).
 
 Por mais que já esteja estilizado não quer dizer que esse será o design final. É apenas um representação para dar uma ideia do que será construído.
 
-## API usada :rocket:
-
-<https://github.com/jadsonluan/moodtracker-api>
