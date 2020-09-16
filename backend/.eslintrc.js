@@ -13,7 +13,6 @@ module.exports = {
     "rules": {
         "quotes": ["warn", "double"],
         "semi": ["warn", "never"],
-        "indent": ["warn", 2],
-        'no-unused-vars': ['warn', true]
+        "indent": ["warn", 2]
     }
 };
