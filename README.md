@@ -12,6 +12,6 @@ Ainda na tela inicial, há um histórico dos últimos registros de sentimentos c
 
 ### Protótipo :rocket:
 
-Você pode visualizar uma prévia [aqui](https://jadsonluan.github.io/moodtracker/frontend/).
+Você pode visualizar uma prévia [aqui](https://jadsonluan.github.io/moodtracker/frontend/prototipo.html).
 
 Por mais que já esteja estilizado não quer dizer que esse será o design final. É apenas um representação para dar uma ideia do que será construído.
