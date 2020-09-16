@@ -8,57 +8,67 @@
     <title>MoodTracker</title>
 </head>
 <body>
-    <div id="form">
-        <h2 id="title">Como você está?</h2>
-        <div id="moods">
-            <div class="label loving active">apaixonado</div>
-            <div class="label happy">feliz</div>
-            <div class="label normal">normal</div>
-            <div class="label anxious">ansioso</div>
-            <div class="label rage">puto</div>
-            <div class="label sad">triste</div>
-            <div class="label depressed">depressivo</div>
-            <div class="label add">+ tags</div>
-        </div>
-        <div id="why">
-            <h3>Por quê?</h3>
-            <input type="text" placeholder="O que causou esse sentimento?">
-        </div>
-        <div id="actions">
-            <button id="send-btn">OK</button>
-            <button id="cancel-btn">X</button>
-        </div>
+    <div id="header">
+        <h1>MoodTracker</h1>
     </div>
-    <div id="tracker">
-        <h1>Seu humor nas últimas horas</h1>
-        <ul>
-            <li>
-                <div class="label time">04/set 14:43</div>
+
+    <div id="content">
+        <div id="form">
+            <h2 id="title">Como você está?</h2>
+            <div id="moods">
+                <div class="label loving active">apaixonado</div>
+                <div class="label happy">feliz</div>
+                <div class="label normal">normal</div>
+                <div class="label anxious">ansioso</div>
                 <div class="label rage">puto</div>
-                <p>Comeram meu bolo que estava na geladeira</p>
-            </li>
-
-            <li>
-                <div class="label time">04/set 13:43</div>
-                <div class="label happy">feliz</div>
-                <p>Consegui terminar o protótipo do projeto</p>
-            </li>
-
-            <li>
-                <div class="label time">04/set 12:43</div>
-                <div class="label happy">feliz</div>
-                <p>Consegui aprovação da proposta de projeto</p>
-            </li>
-        </ul>
-
-        <div id="other-visualizations">
-            <h1>Visualizações</h2>
-            <div>
-                <button>Grid</button>
-                <button>Lâmpadas</button>
-                <button>Bolas</button>
+                <div class="label sad">triste</div>
+                <div class="label depressed">depressivo</div>
+                <div class="label add">+ tags</div>
+            </div>
+            <div id="why">
+                <h3>Por quê?</h3>
+                <input type="text" placeholder="O que causou esse sentimento?">
+            </div>
+            <div id="actions">
+                <button id="send-btn">OK</button>
+                <button id="cancel-btn">X</button>
+            </div>
+        </div>
+        <div id="tracker">
+            <h1>Seu humor nas últimas horas</h1>
+            <ul>
+                <li>
+                    <div class="label time">04/set 14:43</div>
+                    <div class="label rage">puto</div>
+                    <p>Comeram meu bolo que estava na geladeira</p>
+                </li>
+    
+                <li>
+                    <div class="label time">04/set 13:43</div>
+                    <div class="label happy">feliz</div>
+                    <p>Consegui terminar o protótipo do projeto</p>
+                </li>
+    
+                <li>
+                    <div class="label time">04/set 12:43</div>
+                    <div class="label happy">feliz</div>
+                    <p>Consegui aprovação da proposta de projeto</p>
+                </li>
+            </ul>
+    
+            <div id="other-visualizations">
+                <h1>Visualizações</h2>
+                <div>
+                    <button class="active">Grid</button>
+                    <button>Lâmpadas</button>
+                    <button>Bolas</button>
+                </div>
+                <div id="visualization">
+                    <div id="grid">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
-</html>
+</html> 

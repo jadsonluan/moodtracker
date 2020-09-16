@@ -8,8 +8,21 @@ h1, h2, h3, h4, h5, h6{
 body { 
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    /* padding: 0 50px; */
+}
+
+div#header {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px 50px;
+}
+
+div#content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     padding: 50px;
 }
 
@@ -40,7 +53,6 @@ div#moods div.label:hover {
     display: flex;
     flex-flow: column wrap;
     width: 300px;
-    padding: 20px;
 }
 
 #title {
@@ -97,7 +109,6 @@ div.sad { background: blueviolet; }
 div.depressed { background: navy; }
 div.add { background: #222; }
 
-div#tracker { margin-left: 30px; }
 div#tracker h1 { margin-bottom: 20px; }
 div#tracker ul { list-style-type: none; }
 div#tracker ul .label {
@@ -137,7 +148,17 @@ div#other-visualizations button {
     font-weight: bold;
 }
 
-div#other-visualizations button:hover {
+div#other-visualizations button.active {
     background-color: rgb(0, 89, 255);
     border-color: rgb(0, 89, 255);
 }
+
+div#visualization { margin: 20px 0;}
+
+div#grid {
+    display: grid;
+    grid-template-rows: 80px 200px;
+    grid-gap: 10px;
+}
+
+#grid > div:nth-child(odd) { background: red; margin: 2px; }
