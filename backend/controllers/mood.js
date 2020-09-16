@@ -2,7 +2,7 @@ const { createMood, listMoods } = require("../services/mood.service.js")
 
 module.exports = {
   create: (req, res) => {
-    const { mood } = req.body;
+    const { mood } = req.body
 
     if (mood) {
       const id = createMood(mood)
