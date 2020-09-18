@@ -1,21 +1,16 @@
-const moods = []
-let id = 0
+const Mood = require("../models/Mood")
 
 module.exports = {
-  createMood: ({ name, color }) => {
-    if (!name) throw Error("Name is missing on Mood object.")
-    if (!color) throw Error("Color is missing on Mood object.")
-    // Validar se a color é hexcolor
+  createMood: async({ name, color }) => {
+    if (!name) throw Error("name not provided")
+    if (!color) throw Error("color not provided")
 
-    id++
-    
-    moods.push({
-      id,
-      name,
-      color
-    })
-
-    return id
+    try {
+      const mood = await Mood.create({ name, color })
+      return mood
+    } catch (error) {
+      throw new Error(error.message)
+    }
   },
-  listMoods: () => moods
+  listMoods: async() => await Mood.find({})
 }
