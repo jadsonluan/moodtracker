@@ -1,5 +1,5 @@
 const express = require("express")
-const RecordController = require("../controllers/record")
+const RecordController = require("../controllers/record.controller")
 const router = express.Router()
 
 router.post("/", RecordController.create)

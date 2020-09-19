@@ -1,5 +1,5 @@
 const express = require("express")
-const MoodController = require("../controllers/mood")
+const MoodController = require("../controllers/mood.controller")
 
 const router = express.Router()
 
