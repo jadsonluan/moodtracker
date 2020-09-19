@@ -11,4 +11,4 @@ const Mood = new Schema({
   }
 })
 
-module.exports = model('Mood', Mood)
+module.exports = model("Mood", Mood)
