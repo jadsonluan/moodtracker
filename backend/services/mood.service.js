@@ -1,7 +1,7 @@
 const Mood = require("../models/Mood")
 
 module.exports = {
-  createMood: async({ name, color }) => {
+  create: async({ name, color }) => {
     if (!name) throw Error("name not provided")
     if (!color) throw Error("color not provided")
 
@@ -12,5 +12,5 @@ module.exports = {
       throw new Error(error.message)
     }
   },
-  listMoods: async() => await Mood.find({})
+  findAll: async() => await Mood.find({})
 }
