@@ -48,3 +48,56 @@ Os endpoints **atualmente** implementados são:
 | POST   | /moods   | Cria um novo humor (tag)                   |
 | GET    | /records | Lista todos os registros                   |
 | POST   | /records | Cria um novo registro                      |
+
+### Formato dos objetos
+
+#### Requests
+
+POST /moods
+
+```json
+{ "name": "triste", "color": "#0000ff" }
+```
+
+POST /records`
+
+```json
+{ 
+  "description": "comeram meu bolo",
+  "mood": "5f66192ee117e4eff7e4201b"
+}
+```
+
+#### Responses
+
+GET /moods
+
+```json
+[
+  {
+    "_id": "5f66192ee117e4eff7e4201b",
+    "name": "triste",
+    "color": "#0000ff",
+    "__v": 0
+  }
+]
+```
+
+GET /records
+
+```json
+[
+  {
+    "_id": "5f6614a3b39a23e8a6a01bf6",
+    "description": "comeram meu bolo",
+    "mood": {
+      "_id": "5f66192ee117e4eff7e4201b",
+      "name": "triste",
+      "color": "#0000ff",
+      "__v": 0
+    },
+    "createdAt": "2020-09-19T14:24:35.128Z",
+    "__v": 0
+  }
+]
+```
