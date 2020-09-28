@@ -1,0 +1,53 @@
+
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  width: 300px;
+}
+
+.title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.why {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.why h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.why input {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+.why input:focus {
+  border-color: deepskyblue;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions button {
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  color: white;
+  font-family: 'Pacifico';
+}
+
+.send-btn { background-color: lawngreen; }
+.cancel-btn { background-color: crimson; }
+
+.tags > * { margin: 1px; }

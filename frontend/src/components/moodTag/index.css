@@ -1,0 +1,12 @@
+div.label {
+  color: white;
+  cursor: pointer;
+  padding: 0px 10px;
+  border-radius: 10px;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+
+.active {
+  color: lawngreen;
+}
