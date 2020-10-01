@@ -36,18 +36,9 @@
   justify-content: flex-end;
 }
 
-.actions button {
-  margin-left: 10px;
-  cursor: pointer;
-  border: none;
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  color: white;
-  font-family: 'Pacifico';
-}
-
-.send-btn { background-color: lawngreen; }
-.cancel-btn { background-color: crimson; }
-
 .tags > * { margin: 1px; }
+
+.selected {
+  color: black !important;
+  font-weight: bold;
+}
