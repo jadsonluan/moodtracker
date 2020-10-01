@@ -13,12 +13,7 @@ export default class MainPage extends React.Component {
   }
 
   componentDidMount() {
-    let { lastTagId } = this.state;
-    const id = lastTagId + 1;
-    this.setState({
-      tags: [{id, name: "Happy", color: "deepskyblue"}],
-      lastTagId: id
-    })
+    this.createTag({ name: "Happy", color: "deepskyblue" })
   }
 
   createTag = (tag) => {
