@@ -7,18 +7,14 @@ export default class MoodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: [],
       selected: undefined,
       why: '',
-      counter: 1
     }
   }
 
   addTag = () => {
-    const tag = { id: this.state.counter, name: 'Test', color: 'grey' };
-    const { tags } = this.state;
-    tags.push(tag);
-    this.setState({ tags, counter: this.state.counter + 1 })
+    const tag = { name: 'Test', color: 'purple' };
+    this.props.createTag(tag);
   }
 
   selectTag = (tag) => {
@@ -28,10 +24,7 @@ export default class MoodForm extends React.Component {
 
   submit = () => {
     const { why, selected } = this.state;
-
-    console.log("Form enviado")
-    console.log("Tag:", selected)
-    console.log("Descrição:", why)
+    this.props.createMood({ description: why, tag: selected })
   }
 
   cancel = () => {
@@ -51,7 +44,7 @@ export default class MoodForm extends React.Component {
         <h2 className="title">Como você está?</h2>
 
         <div className="tags">
-          { this.state.tags.map((tag, idx) => 
+          { this.props.tags.map((tag, idx) => 
             <MoodTag 
               name={tag.name} 
               color={tag.color}

@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.css';
-import MoodForm from './components/moodForm';
+import MainPage from './components/mainPage';
 
 function App() {
   return (
     <div className="App">
-      <MoodForm/>
+      <MainPage/>
     </div>
   );
 }
