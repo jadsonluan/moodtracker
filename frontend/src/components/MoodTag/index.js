@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './MoodTag.css';
 
 function MoodTag(props) {
   return (

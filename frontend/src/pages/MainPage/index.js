@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MoodForm from "../moodForm";
+import MoodForm from "../../components/MoodForm";
 
 const initialTag = { id: 1, name: "Happy", color: "deepskyblue" };
 

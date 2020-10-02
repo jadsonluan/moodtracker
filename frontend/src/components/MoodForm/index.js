@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import MoodTag from '../moodTag';
-import Button from '../button';
-import './index.css';
+import MoodTag from '../MoodTag';
+import Button from './Button';
+import './MoodForm.css';
 
 const testTag = { name: 'Test', color: 'purple' };
 
