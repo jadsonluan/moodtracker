@@ -1,0 +1,27 @@
+.nav {
+  background-color: deepskyblue;
+  display: flex;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul { 
+  display: flex; 
+  list-style-type: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+}
+
+.nav a.current-tab {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+.nav a:hover {
+  border-bottom: 2px solid white;
+}
