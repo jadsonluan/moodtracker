@@ -1,24 +1,14 @@
-import React, { useState } from "react";
-import MoodForm from "../../components/MoodForm";
-
-const initialTag = { id: 1, name: "Happy", color: "deepskyblue" };
+import React from "react";
+import "./MainPage.css";
+import MoodRecordList from "../../components/MoodRecordList";
 
 function MainPage(props) {
-  const [tags, setTags] = useState([initialTag]);
-  const [moods, setMoods] = useState([]);
-
-  const createTag = (tag) => setTags([...tags, {id: tags.length + 1, ...tag}]);
-  const createMood = (mood) => setMoods([...moods, {id: moods.length + 1, ...mood}]);
-
   return (
-    <div>
-      <MoodForm tags={tags} createTag={createTag} createMood={createMood}/>
-      <hr/>
-      <ul>
-        { moods.map(mood => <li>[{mood.tag.name}] {mood.description}</li>)}
-      </ul>
+    <div className="main-page">
+      <h1>Seus últimos registros</h1>
+      <MoodRecordList moods={props.moods} />
     </div>
-  );
+  )
 }
 
 export default MainPage;
