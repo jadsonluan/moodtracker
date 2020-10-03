@@ -1,0 +1,10 @@
+.mood-record {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.mood-record .description {
+  margin-left: 10px;
+}
