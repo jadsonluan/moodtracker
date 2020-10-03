@@ -10,9 +10,8 @@ function MoodForm(props) {
   const [description, setDescription] = useState("");
 
   const addTag = () => props.createTag(testTag);
-  const submit = () => props.createMood({ description, tag: selectedTag })
-  const cancel = () => alert("Cancelado"); 
-  const handleChange = (event) => setDescription(event.target.value)
+  const submit = () => props.createMood({ description, tag: selectedTag });
+  const handleChange = (event) => setDescription(event.target.value);
 
   const selectTag = (tag) => {
     const selected = selectedTag !== tag ? tag : undefined;
@@ -43,8 +42,7 @@ function MoodForm(props) {
       </div>
 
       <div className="actions">
-        <Button color="lawngreen" value="OK" onClick={submit}/>
-        <Button color="crimson" value="X" onClick={cancel}/>
+        <Button className="register-btn" value="Registrar" onClick={submit}/>
       </div>
     </div>
   );

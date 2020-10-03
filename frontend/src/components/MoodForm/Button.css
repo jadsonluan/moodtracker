@@ -1,10 +1,8 @@
 button {
   margin-left: 10px;
+  padding: 5px 20px;
   cursor: pointer;
   border: none;
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
   color: white;
-  font-family: 'Pacifico';
+  border-radius: 100px;
 }

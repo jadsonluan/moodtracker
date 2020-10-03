@@ -36,9 +36,17 @@
   justify-content: flex-end;
 }
 
+.tags { margin-bottom: 50px; }
 .tags > * { margin: 1px; }
 
 .selected {
   color: black !important;
   font-weight: bold;
 }
+
+.register-btn {
+  background-color: deepskyblue;
+  font-weight: bold;
+}
+
+.register-btn:hover { background-color: dodgerblue; }
