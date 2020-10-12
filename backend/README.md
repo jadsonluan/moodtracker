@@ -16,3 +16,35 @@ Por fim, rode a API em modo dev.
 ```bash
 npm run dev
 ```
+
+### Endpoints
+
+Há dois principais recursos na API: moods e records. Esses são, respectivamente, as tags que representam um sentimento e os registros de humor.
+
+Os endpoints **atualmente** implementados são:
+
+| Method | Endpoint | Descrição                                  |
+|--------|----------|--------------------------------------------|
+| GET    | /moods   | Lista todos os humores (tags) cadastrados. |
+| POST   | /moods   | Cria um novo humor (tag)                   |
+| GET    | /records | Lista todos os registros                   |
+| POST   | /records | Cria um novo registro                      |
+
+### Formato dos objetos
+
+#### Requests
+
+POST /moods
+
+```json
+{ "name": "triste", "color": "#0000ff" }
+```
+
+POST /records`
+
+```json
+{ 
+  "description": "comeram meu bolo",
+  "mood": "5f66192ee117e4eff7e4201b"
+}
+```
