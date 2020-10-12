@@ -1,4 +1,5 @@
-const Mood = require("../models/Mood")
+const config = require("../config")
+const Mood = config.localMode ? require("../local/Mood") : require("../models/Mood")
 
 module.exports = {
   create: async({ name, color }) => {

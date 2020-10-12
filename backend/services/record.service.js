@@ -1,4 +1,5 @@
-const Record = require("../models/Record")
+const config = require("../config")
+const Record = config.localMode ? require("../local/Record") : require("../models/Record")
 
 module.exports = {
   create: async({description, mood_id}) => {

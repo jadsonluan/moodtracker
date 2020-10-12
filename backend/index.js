@@ -7,7 +7,8 @@ const recordRouter = require("./routers/record.router")
 const config = require("./config")
 const app = express()
 
-mongoose.connect(config.mongoDB.uri, { useNewUrlParser: true, useUnifiedTopology: true })
+if (!config.localMode)
+  mongoose.connect(config.mongoDB.uri, { useNewUrlParser: true, useUnifiedTopology: true }) 
 
 app.use(cors())
 app.use(express.json())
