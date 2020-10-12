@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Nav from "./components/Nav";
 import MoodForm from "./components/MoodForm";
 import MainPage from "./pages/MainPage";
 import VisualizationPage from "./pages/VisualizationPage";
+import MoodAPI from "./services/api";
 
 import "./App.css";
 
@@ -16,6 +17,16 @@ function App() {
 
   const createTag = (tag) => setTags([...tags, {id: tags.length + 1, ...tag}]);
   const createMood = (mood) => setMoods([...moods, {id: moods.length + 1, ...mood}]);
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const response = await MoodAPI.tags.findAll()
+      const _tags = await response.json()
+      setTags(_tags)
+    }
+
+    fetchData()
+  }, [tags])
 
   return (
     <div className="App">
