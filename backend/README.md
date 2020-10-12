@@ -19,7 +19,7 @@ npm run dev
 
 ### Endpoints
 
-Há dois principais recursos na API: tags e records. Esses são, respectivamente, as tags que representam um sentimento e os registros de humor.
+Há dois principais recursos na API: tags e moods. Esses são, respectivamente, as tags que representam um sentimento e os registros de humor.
 
 Os endpoints **atualmente** implementados são:
 
@@ -27,8 +27,8 @@ Os endpoints **atualmente** implementados são:
 |--------|----------|--------------------------------------------|
 | GET    | /tags    | Lista todas as humores tags cadastrados.   |
 | POST   | /tags    | Cria uma tag                               |
-| GET    | /records | Lista todos os registros                   |
-| POST   | /records | Cria um novo registro                      |
+| GET    | /moods   | Lista todos os humores cadastrados         |
+| POST   | /moods   | Registra um novo humor                     |
 
 ### Formato dos objetos
 
@@ -40,7 +40,7 @@ POST /tags
 { "name": "triste", "color": "#0000ff" }
 ```
 
-POST /records`
+POST /moods`
 
 ```json
 { 

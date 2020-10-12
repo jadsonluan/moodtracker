@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose")
 
-const Record = new Schema(
+const Mood = new Schema(
   {
     description: {
       type: String,
@@ -15,4 +15,4 @@ const Record = new Schema(
   { timestamps: { createdAt: true, updatedAt: false }}
 )
 
-module.exports = model("Record", Record)
+module.exports = model("Mood", Mood)

@@ -1,4 +1,5 @@
-const TagService = require("../services/tag.service.js")
+const config = require("../config")
+const TagService = config.localMode ? require("../services/tag.local.service") : require("../services/tag.service")
 
 module.exports = {
   create: async(req, res) => {
