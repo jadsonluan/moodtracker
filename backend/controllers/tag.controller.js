@@ -1,18 +1,18 @@
-const MoodService = require("../services/mood.service.js")
+const TagService = require("../services/tag.service.js")
 
 module.exports = {
   create: async(req, res) => {
     try {
-      const mood = await MoodService.create(req.body)
-      res.status(201).json({ id: mood._id })
+      const tag = await TagService.create(req.body)
+      res.status(201).json({ id: tag._id })
     } catch (error) {
       res.status(400).json({error: error.message})
     }
   },
   findAll: async(req, res) => {
     try {
-      const moods = await MoodService.findAll()
-      res.status(200).json(moods)
+      const tags = await TagService.findAll()
+      res.status(200).json(tags)
     } catch (error) {
       res.status(400).json({error: error.message})
     }

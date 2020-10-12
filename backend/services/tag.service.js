@@ -1,5 +1,5 @@
 const config = require("../config")
-const Mood = config.localMode ? require("../local/Mood") : require("../models/Mood")
+const Tag = config.localMode ? require("../local/Tag") : require("../models/Tag")
 
 module.exports = {
   create: async({ name, color }) => {
@@ -7,11 +7,11 @@ module.exports = {
     if (!color) throw Error("color not provided")
 
     try {
-      const mood = await Mood.create({ name, color })
-      return mood
+      const tag = await Tag.create({ name, color })
+      return tag
     } catch (error) {
       throw new Error(error.message)
     }
   },
-  findAll: async() => await Mood.find({})
+  findAll: async() => await Tag.find({})
 }
