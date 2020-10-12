@@ -1,6 +1,6 @@
 # Usando a API
 
-Inicialmente, você precisa clonar esse repositório e instalar as dependências do backend.
+Primeiro você precisa clonar esse repositório e instalar as dependências do backend.
 
 ```bash
 git clone https://github.com/jadsonluan/moodtracker
