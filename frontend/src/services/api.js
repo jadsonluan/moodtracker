@@ -1,7 +1,10 @@
 import axios from "axios";
+// import dotenv from "dotenv";
+
+const DEFAULT_API_URL = "http://localhost:5000";
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: process.env.API_URL || DEFAULT_API_URL,
   timeout: 5000,
   headers: {'Content-Type': 'application/json'}
 });
