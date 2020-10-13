@@ -7,7 +7,8 @@ module.exports = {
     try {
       const tag = Tag.findById(tag_id)
       const id = ++idCounter
-      moods[id] = { id, description, tag }
+      const created_at = Date.now()
+      moods[id] = { _id: id, description, tag, created_at }
       return moods[id]
     } catch (error) {
       throw Error(error.message)

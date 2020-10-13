@@ -4,7 +4,8 @@ let idCounter = 0
 module.exports = {
   create: ({name, color}) => {
     const id = ++idCounter
-    tags[id] = { id, name, color }
+    const created_at = Date.now()
+    tags[id] = { _id: id, name, color, created_at }
     return tags[id]
   },
   find: () => Object.values(tags),

@@ -5,7 +5,7 @@ module.exports = {
   create: async(req, res) => {
     try {
       const tag = await TagService.create(req.body)
-      res.status(201).json({ id: tag._id })
+      res.status(201).json(tag)
     } catch (error) {
       res.status(400).json({error: error.message})
     }

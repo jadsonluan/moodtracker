@@ -6,7 +6,7 @@ module.exports = {
     try {
       const { description, tag_id } = req.body
       const mood = await MoodService.create({ description, tag_id })
-      res.status(201).json({ id: mood._id })
+      res.status(201).json(mood)
     } catch (error) {
       res.status(400).json({ error: error.message })
     }
