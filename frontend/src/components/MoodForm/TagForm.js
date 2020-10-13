@@ -15,16 +15,16 @@ function TagForm(props) {
       props.hide()
     } else {
       let colorMessage = isHexColor(color) ? "" : "A cor informada não é uma hex color.";
-      let nameMessage = name == "" ? "O campo 'nome' é obrigatório." : ""
+      let nameMessage = name === "" ? "O campo 'nome' é obrigatório." : ""
       setErrors({ name: nameMessage, color: colorMessage })
     }
   }
 
   const handleChange = (ev) => {
     const { name, value } = ev.target
-    if (name == "name") {
+    if (name === "name") {
       setName(value);
-    } else if (name == "color") {
+    } else if (name === "color") {
       setColor(value); 
     }
   }
