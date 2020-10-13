@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import MoodTag from '../MoodTag';
+import TagForm from './TagForm';
 import Button from './Button';
 import './MoodForm.css';
-
-const testTag = { name: 'Test', color: 'purple' };
 
 function MoodForm(props) {
   const [selectedTag, setSelectedTag] = useState(undefined);
   const [description, setDescription] = useState("");
+  const [tagFormVisible, setTagFormVisible] = useState(false);
 
-  const addTag = () => props.createTag(testTag);
-  const submit = () => props.createMood({ description, tag: selectedTag });
+  const toggleVisibility = () => setTagFormVisible(!tagFormVisible)
+  const submit = () => { 
+    props.createMood({ description, tag: selectedTag });
+    props.history.push("/");
+  }
   const handleChange = (event) => setDescription(event.target.value);
 
   const selectTag = (tag) => {
@@ -28,13 +31,16 @@ function MoodForm(props) {
               color={tag.color}
               key={idx} 
               onClick={() => selectTag(tag)}
-              className={ selectedTag && selectedTag.id === tag.id ? "selected" : ""} 
+              className={ selectedTag && selectedTag._id === tag._id ? "selected" : ""} 
             />
           )
         }
 
-        <MoodTag name="+ tags" color="black" onClick={addTag}/>
+        <MoodTag name="+ tags" color="black" onClick={toggleVisibility}/>
       </div>
+
+      { tagFormVisible ? 
+        <TagForm createTag={props.createTag} hide={toggleVisibility}/> : undefined }
       
       <div className="why">
         <h3>Por quê?</h3>

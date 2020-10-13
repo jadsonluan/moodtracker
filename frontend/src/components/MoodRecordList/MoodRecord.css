@@ -8,3 +8,7 @@
 .mood-record .description {
   margin-left: 10px;
 }
+
+.mood-record > * {
+  margin-right: 4px;
+}

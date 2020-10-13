@@ -1,7 +1,18 @@
-const BASE_URL = "http://localhost:5000"
+import axios from "axios";
+
+const instance = axios.create({
+  baseURL: 'http://localhost:5000',
+  timeout: 5000,
+  headers: {'Content-Type': 'application/json'}
+});
 
 export default {
   tags: {
-    findAll: () => fetch(BASE_URL.concat("/tags"), { method: 'GET' })
+    findAll: () => instance.get("/tags"),
+    create: (tag) => instance.post("/tags", tag)
+  },
+  moods: {
+    findAll: () => instance.get("/moods"),
+    create: (mood) => instance.post("/moods", mood)
   }
 }

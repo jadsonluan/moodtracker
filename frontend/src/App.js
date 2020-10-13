@@ -9,24 +9,37 @@ import MoodAPI from "./services/api";
 
 import "./App.css";
 
-const initialTag = { id: 1, name: "Happy", color: "deepskyblue" };
-
 function App() {
-  const [tags, setTags] = useState([initialTag]);
+  const [tags, setTags] = useState([]);
   const [moods, setMoods] = useState([]);
 
-  const createTag = (tag) => setTags([...tags, {id: tags.length + 1, ...tag}]);
-  const createMood = (mood) => setMoods([...moods, {id: moods.length + 1, ...mood}]);
+  const createTag = ({ name, color }) => {
+    MoodAPI.tags.create({ name, color })
+    .then(({data}) => {
+      const tag = { ...data }
+      setTags([...tags, tag]);
+    })
+    .catch(console.log)
+  }
+
+  const createMood = ({description, tag}) => {
+    MoodAPI.moods.create({ description, tag_id: tag._id })
+      .then(({data}) => {
+        const mood = { ...data }
+        setMoods([...moods, mood]);
+      })
+      .catch(console.log)
+  }
 
   useEffect(() => {
-    const fetchData = async() => {
-      const response = await MoodAPI.tags.findAll()
-      const _tags = await response.json()
-      setTags(_tags)
-    }
+    MoodAPI.tags.findAll()
+      .then(({data}) => setTags(data))
+      .catch(error => console.log(error))
 
-    fetchData()
-  }, [tags])
+    MoodAPI.moods.findAll()
+      .then(({data}) => {setMoods(data); console.log(data)})
+      .catch(error => console.log(error))
+  }, [])
 
   return (
     <div className="App">
@@ -39,8 +52,10 @@ function App() {
               <MainPage moods={moods}/>
             </Route>
 
-            <Route path="/new">
-              <MoodForm tags={tags} createTag={createTag} createMood={createMood}/>
+            <Route 
+              path="/new"
+              render={ props => 
+                <MoodForm {...props} tags={tags} createTag={createTag} createMood={createMood}/>}>
             </Route>
 
             <Route path="/visualizations">
