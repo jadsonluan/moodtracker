@@ -37,7 +37,7 @@ function App() {
       .catch(error => console.log(error))
 
     MoodAPI.moods.findAll()
-      .then(({data}) => {setMoods(data); console.log(data)})
+      .then(({data}) => setMoods(data))
       .catch(error => console.log(error))
   }, [])
 
