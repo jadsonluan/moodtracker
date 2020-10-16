@@ -6,7 +6,6 @@ import Button from "./Button";
 function TagForm(props) {
   const [color, setColor] = useState("#FFFFFF")
   const [name, setName] = useState("")
-  const [errors, setErrors] = useState({ color: '', name: '' })
 
   const isHexColor = (value) => /^#[A-Fa-f0-9]{6}$/.test(value)
 
