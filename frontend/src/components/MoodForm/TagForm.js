@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import "./TagForm.css";
 import Button from "./Button";
 
@@ -10,13 +11,13 @@ function TagForm(props) {
   const isHexColor = (value) => /^#[A-Fa-f0-9]{6}$/.test(value)
 
   const createTag = () => {
-    if (isHexColor(color) && name !== "") {
+    if (!isHexColor(color)) {
+      toast.error("A cor informada não é uma cor hex. (Formato: #FFFFFF)");
+    } else if (!name) {
+      toast.error("O campo 'nome' é obrigatório.");
+    } else {
       props.createTag({name,color})
       props.hide()
-    } else {
-      let colorMessage = isHexColor(color) ? "" : "A cor informada não é uma hex color.";
-      let nameMessage = name === "" ? "O campo 'nome' é obrigatório." : ""
-      setErrors({ name: nameMessage, color: colorMessage })
     }
   }
 

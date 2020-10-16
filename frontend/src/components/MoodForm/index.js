@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import MoodTag from '../MoodTag';
 import TagForm from './TagForm';
 import Button from './Button';
@@ -10,9 +11,16 @@ function MoodForm(props) {
   const [tagFormVisible, setTagFormVisible] = useState(false);
 
   const toggleVisibility = () => setTagFormVisible(!tagFormVisible)
-  const submit = () => { 
-    props.createMood({ description, tag: selectedTag });
-    props.history.push("/");
+  const submit = () => {
+    if (selectedTag === undefined) {
+      toast.error("Tag não selecionada")
+    } else if (!description) {
+      toast.error("Descrição não informada")
+    } else {
+      props.createMood({ description, tag: selectedTag });
+      toast.success("Humor registrado com sucesso!")
+      props.history.push("/");
+    }
   }
   const handleChange = (event) => setDescription(event.target.value);
 

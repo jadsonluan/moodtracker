@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
+
 import Nav from "./components/Nav";
 import MoodForm from "./components/MoodForm";
 import MainPage from "./pages/MainPage";
@@ -43,6 +46,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer/>
       <Router>
         <div className="content">
           <Nav/>
