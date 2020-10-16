@@ -13,3 +13,12 @@ h1, h2, h3, h4, h5, h6{
   padding-left: 50px;
   padding-right: 50px;
 }
+
+.rounded-input {
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+.rounded-input:focus {
+  border-color: deepskyblue;
+}

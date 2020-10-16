@@ -34,21 +34,16 @@ function TagForm(props) {
     <div className="tagForm">
       <h3>Nova Tag</h3>
 
-      <div className="errors">
-        { <span>{errors.name}</span> }
-        { <span>{errors.color}</span> }
+      <div className="tagInput">
+        <input type="text" name="name" value={name} className="rounded-input" onChange={handleChange} placeholder="Nome"></input>
       </div>
 
       <div className="tagInput">
-        <input type="text" name="name" value={name} onChange={handleChange} placeholder="Nome"></input>
-      </div>
-
-      <div className="tagInput">
-        <input type="text" name="color" value={color} onChange={handleChange}></input> 
+        <input type="text" name="color" value={color} className="rounded-input" onChange={handleChange}></input> 
       </div>
 
       <div className="buttons">
-        <Button className="cancelBtn"onClick={props.hide} value="Cancelar"/>
+        <Button className="cancelBtn"onClick={props.hide} value="Sair"/>
         <Button className="createBtn" onClick={createTag} value="Criar"/>
       </div>
     </div>

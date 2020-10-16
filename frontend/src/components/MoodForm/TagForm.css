@@ -1,9 +1,14 @@
 .tagForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.tagForm h3 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .tagInput {
@@ -12,14 +17,9 @@
 }
 
 .tagInput input {
-  border: 2px solid #252830;
-  border-radius: 100px;
-  margin-left: 10px;
   padding: 2px 15px;
-}
-
-.tagInput input:focus {
-  border-color: deepskyblue;
+  text-align: center;
+  width: 100px;
 }
 
 .tagForm .buttons {
@@ -47,12 +47,4 @@
 .tagForm .cancelBtn { 
   background-color: grey;
   border-color: grey;
-}
-
-.tagForm .errors {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0px;
-  color: red;
-  margin-bottom: 10px;
 }

@@ -52,7 +52,7 @@ function MoodForm(props) {
       
       <div className="why">
         <h3>Por quê?</h3>
-        <input type="text" name="description" value={description} onChange={handleChange}/>
+        <input type="text" name="description" className="rounded-input" value={description} onChange={handleChange}/>
       </div>
 
       <div className="actions">
