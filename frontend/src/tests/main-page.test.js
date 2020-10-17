@@ -57,7 +57,7 @@ test("it should list the only mood with 'projeto' in the description or tag name
   const { children } = moodRecordList
   fireEvent.change(input, { target: { value: 'projeto' } })
   for (let i = 0; i < children.length; i++)
-    expect(children[0].textContent.includes('projeto'))
+    expect(children[i].textContent.includes('projeto'))
   expect(children.length).toBe(1)
 })
 
@@ -66,6 +66,6 @@ test("it should list the two moods with 'feliz' in the description or tag name",
   const { children } = moodRecordList
   fireEvent.change(input, { target: { value: 'feliz' } })
   for (let i = 0; i < children.length; i++)
-    expect(children[0].textContent.includes('feliz'))
+    expect(children[i].textContent.includes('feliz'))
   expect(children.length).toBe(2)
 })
