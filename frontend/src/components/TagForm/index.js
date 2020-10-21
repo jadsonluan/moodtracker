@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import Button from "../Button";
 import "./TagForm.css";
-import Button from "./Button";
 
 function TagForm(props) {
   const [color, setColor] = useState("#FFFFFF")
@@ -42,7 +42,7 @@ function TagForm(props) {
       </div>
 
       <div className="buttons">
-        <Button className="cancelBtn"onClick={props.hide} value="Sair"/>
+        <Button className="cancelBtn" onClick={props.hide} value="Sair"/>
         <Button className="createBtn" onClick={createTag} value="Criar"/>
       </div>
     </div>

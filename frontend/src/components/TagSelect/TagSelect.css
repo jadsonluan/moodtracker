@@ -1,0 +1,7 @@
+.tags { margin-bottom: 20px; }
+.tags > * { margin: 1px; }
+
+.selected {
+  color: black !important;
+  font-weight: bold;
+}
