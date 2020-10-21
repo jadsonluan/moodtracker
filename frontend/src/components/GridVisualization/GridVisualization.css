@@ -1,0 +1,9 @@
+.grid-visualization {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  box-shadow: 1px 1px 1px 0 dodgerblue;
+  padding: 5px;
+  width: 300px;
+  min-height: 300px;
+}

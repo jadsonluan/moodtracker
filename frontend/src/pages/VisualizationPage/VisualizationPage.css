@@ -1,0 +1,14 @@
+.visualization-page .buttons > * {
+  background-color: dodgerblue;
+  padding: 4px 10px;
+  margin-right: 4px;
+}
+
+.visualization-page .visualization {
+  margin: 10px 0;
+}
+
+.visualization-page .active {
+  background-color: rgb(23, 115, 207);
+  color: white;
+}

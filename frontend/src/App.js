@@ -48,7 +48,7 @@ function App() {
             </Route>
 
             <Route path="/visualizations">
-              <VisualizationPage/>
+              <VisualizationPage moods={moods}/>
             </Route>
           </Switch>
         </div>
