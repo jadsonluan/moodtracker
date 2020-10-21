@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css'; 
 
 import Nav from "./components/Nav";
-import MoodForm from "./components/MoodForm";
+import RegisterMoodPage from "./pages/RegisterMoodPage";
 import MainPage from "./pages/MainPage";
 import VisualizationPage from "./pages/VisualizationPage";
 import MoodAPI from "./services/api";
@@ -13,17 +13,7 @@ import MoodAPI from "./services/api";
 import "./App.css";
 
 function App() {
-  const [tags, setTags] = useState([]);
   const [moods, setMoods] = useState([]);
-
-  const createTag = ({ name, color }) => {
-    MoodAPI.tags.create({ name, color })
-    .then(({data}) => {
-      const tag = { ...data }
-      setTags([...tags, tag]);
-    })
-    .catch(console.log)
-  }
 
   const createMood = ({description, tag}) => {
     MoodAPI.moods.create({ description, tag_id: tag._id })
@@ -35,10 +25,6 @@ function App() {
   }
 
   useEffect(() => {
-    MoodAPI.tags.findAll()
-      .then(({data}) => setTags(data))
-      .catch(error => console.log(error))
-
     MoodAPI.moods.findAll()
       .then(({data}) => setMoods(data))
       .catch(error => console.log(error))
@@ -58,8 +44,7 @@ function App() {
 
             <Route 
               path="/new"
-              render={ props => 
-                <MoodForm {...props} tags={tags} createTag={createTag} createMood={createMood}/>}>
+              render={ props => <RegisterMoodPage {...props} createMood={createMood}/>}>
             </Route>
 
             <Route path="/visualizations">
