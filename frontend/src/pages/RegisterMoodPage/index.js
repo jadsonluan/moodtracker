@@ -7,16 +7,27 @@ import TagSelect from '../../components/TagSelect';
 import TagForm from '../../components/TagForm';
 
 import "./RegisterMoodPage.css";
+import { useMoods } from '../../context/MoodContext';
 
 export default function RegisterMoodPage(props) {
   const [tags, setTags] = useState([])
   const [selectedTag, setSelectedTag] = useState(undefined)
   const [description, setDescription] = useState("");
   const [tagFormVisibility, setTagFormVisibility] = useState(false)
+  const { moods, setMoods } = useMoods()
   
   const selectTag = (tag) => setSelectedTag(tag)
   const toggleFormVisibility = () => setTagFormVisibility(!tagFormVisibility)
   const handleChange = (event) => setDescription(event.target.value);
+
+  const createMood = ({description, tag}) => {
+    MoodAPI.moods.create({ description, tag_id: tag._id })
+      .then(({data}) => {
+        const mood = { ...data }
+        setMoods([...moods, mood]);
+      })
+      .catch(console.log)
+  }
 
   const createTag = ({ name, color }) => {
     MoodAPI.tags.create({ name, color })
@@ -33,7 +44,7 @@ export default function RegisterMoodPage(props) {
     } else if (!description) {
       toast.error("Descrição não informada")
     } else {
-      props.createMood({ description, tag: selectedTag });
+      createMood({ description, tag: selectedTag });
       toast.success("Humor registrado com sucesso!")
       props.history.push("/");
     }
