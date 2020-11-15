@@ -1,0 +1,6 @@
+.grid-cell {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  margin: 1px;
+}
