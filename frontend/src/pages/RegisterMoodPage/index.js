@@ -6,15 +6,17 @@ import Button from "../../components/Button";
 import TagSelect from '../../components/TagSelect';
 import TagForm from '../../components/TagForm';
 
-import "./RegisterMoodPage.css";
 import { useMoods } from '../../context/MoodContext';
+import { useTags } from '../../context/TagContext';
+
+import "./RegisterMoodPage.css";
 
 export default function RegisterMoodPage(props) {
-  const [tags, setTags] = useState([])
   const [selectedTag, setSelectedTag] = useState(undefined)
   const [description, setDescription] = useState("");
   const [tagFormVisibility, setTagFormVisibility] = useState(false)
-  const { moods, setMoods } = useMoods()
+  const {moods, setMoods} = useMoods()
+  const {tags, setTags} = useTags()
   
   const selectTag = (tag) => setSelectedTag(tag)
   const toggleFormVisibility = () => setTagFormVisibility(!tagFormVisibility)
