@@ -1,14 +1,18 @@
 .visualization-page .buttons > * {
-  background-color: dodgerblue;
+  background-color: deepskyblue;
+  border: 2px solid deepskyblue;
   padding: 4px 10px;
   margin-right: 4px;
 }
 
 .visualization-page .visualization {
-  margin: 10px 0;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
 }
 
-.visualization-page .active {
-  background-color: rgb(23, 115, 207);
+.visualization-page .active, .visualization-page .buttons > *:hover {
+  background-color: dodgerblue;
   color: white;
+  border-color: dodgerblue;
 }
