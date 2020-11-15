@@ -10,13 +10,13 @@ import MainPage from "./pages/MainPage";
 import VisualizationPage from "./pages/VisualizationPage";
 
 import "./App.css";
-import MoodsProvider from "./context/MoodContext";
+import MainProvider from "./context/MainProvider";
 
 function App() {
   return (
     <div className="App">
       <ToastContainer/>
-      <MoodsProvider>
+      <MainProvider>
         <Router>
           <div className="content">
             <Nav/>
@@ -37,7 +37,7 @@ function App() {
             </Switch>
           </div>
         </Router>
-      </MoodsProvider>
+      </MainProvider>
     </div>
   );
 }
