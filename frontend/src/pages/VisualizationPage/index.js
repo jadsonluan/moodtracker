@@ -41,6 +41,7 @@ function VisualizationPage(props) {
           })
         }
       </div>
+
       <div className="visualization">
         { renderActiveTab() }
       </div>
