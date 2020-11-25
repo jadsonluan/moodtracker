@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import GridVisualization from "../../components/GridVisualization";
-import CalendarVisualization from "../../components/CalendarVisualization";
+import Calendar from "../../components/Calendar";
 import BaloonVisualization from "../../components/BaloonVisualization";
 
 import Caption from "../../components/Caption";
@@ -9,18 +9,18 @@ import Caption from "../../components/Caption";
 import "./VisualizationPage.css";
 
 const Tabs = {
-  GRID: "grid",
   CALENDAR: "calendar",
+  GRID: "grid",
   BALOON: "baloon"
 }
 
 function VisualizationPage(props) {
-  const [activeTab, setActiveTab] = useState("grid")
+  const [activeTab, setActiveTab] = useState(Tabs.CALENDAR)
 
   const renderActiveTab = () => {
     switch(activeTab) {
       case Tabs.GRID: return <GridVisualization/>;
-      case Tabs.CALENDAR: return <CalendarVisualization/>;
+      case Tabs.CALENDAR: return <Calendar/>;
       case Tabs.BALOON: return <BaloonVisualization/>;
       default: return <GridVisualization/>;
     }
