@@ -1,6 +1,5 @@
 import React from "react";
 import GridMonth from "./GridMonth";
-import Caption from "../Caption";
 import { useMoods } from "../../context/MoodContext";
 import "./GridVisualization.css";
 import { findMoodsByMonth, months } from "../../utils/mood-filter";
@@ -46,9 +45,6 @@ export default function GridVisualization(props) {
             .map((_moods, month) => 
               <GridMonth key={month} year={year} month={month} moods={_moods}/>) }
         </div>
-      </div>
-      <div className="extra-info">
-        <Caption/>
       </div>
     </div>
   )
