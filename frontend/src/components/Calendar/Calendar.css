@@ -1,0 +1,74 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+}
+
+.table td {
+  height: 60px;
+  width: 60px;
+  box-sizing: border-box;
+}
+
+.table thead td {
+  background: deepskyblue;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table tbody td {
+  background: white;
+  text-align: left;
+  vertical-align: top;
+  padding: 5px;
+}
+
+.in-prev-month, .in-next-month {
+  color: grey !important;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.calendar-button {
+  background: deepskyblue;
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  margin: 0 20px;
+}
+
+.calendar-button:hover {
+  background: dodgerblue;
+}
+
+.calendar-day {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-moods {
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar-mood {
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  margin: 0 1px;
+}
+
+.today {
+  border: 2px solid deepskyblue;
+  color: deepskyblue;
+  font-weight: bold;
+}
