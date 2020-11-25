@@ -1,3 +1,10 @@
 .caption {
-  margin-left: 20px;
+  margin-top: 20px;
+  background: white;
+  min-height: 300px;
+  padding: 15px;
+}
+
+.caption p {
+  color: grey;
 }
