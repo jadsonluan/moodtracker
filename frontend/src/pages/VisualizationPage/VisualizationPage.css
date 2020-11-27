@@ -1,6 +1,6 @@
 .visualization-page {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
 .visualization-page .buttons > * {
@@ -11,9 +11,7 @@
 }
 
 .visualization-page .visualization {
-  display: flex;
-  flex-direction: row;
-  margin-left: 100px;
+  
 }
 
 .visualization-page .active, .visualization-page .buttons > *:hover {
@@ -25,4 +23,6 @@
 .visualization-header {
   display: flex;
   flex-direction: column;
+  width: max-content;
+  margin-right: 20px;
 }

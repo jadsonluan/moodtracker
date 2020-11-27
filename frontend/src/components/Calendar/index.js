@@ -1,13 +1,13 @@
 import React from "react";
 import useCalendar from "../../hooks/useCalendar";
 import { useMoods } from "../../context/MoodContext";
-import { findMoodsByDay, mostFrequentTag } from "../../utils/mood-filter";
+import { findMoodsByDay, mostFrequentTag, monthNames, dayShortNames } from "../../utils/mood-filter";
 
 import "./Calendar.css";
 
 function Calendar(props) {
   const { 
-    calendarRows, selectedDate, monthNames, dayShortNames,
+    calendarRows, selectedDate,
     getNextMonth, getPrevMonth 
   } = useCalendar();
 

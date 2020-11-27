@@ -2,7 +2,7 @@ import React from "react";
 import GridMonth from "./GridMonth";
 import { useMoods } from "../../context/MoodContext";
 import "./GridVisualization.css";
-import { findMoodsByMonth, months } from "../../utils/mood-filter";
+import { findMoodsByMonth, monthShortNames as months } from "../../utils/mood-filter";
 
 export default function GridVisualization(props) {
   const { moods } = useMoods();

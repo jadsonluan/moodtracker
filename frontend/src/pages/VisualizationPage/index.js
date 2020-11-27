@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../../components/Button";
 import GridVisualization from "../../components/GridVisualization";
 import Calendar from "../../components/Calendar";
-import BaloonVisualization from "../../components/BaloonVisualization";
+import FlowerVisualization from "../../components/FlowerVisualization";
 
 import Caption from "../../components/Caption";
 
@@ -11,7 +11,7 @@ import "./VisualizationPage.css";
 const Tabs = {
   CALENDAR: "calendar",
   GRID: "grid",
-  BALOON: "baloon"
+  FLOWER: "flower"
 }
 
 function VisualizationPage(props) {
@@ -21,7 +21,7 @@ function VisualizationPage(props) {
     switch(activeTab) {
       case Tabs.GRID: return <GridVisualization/>;
       case Tabs.CALENDAR: return <Calendar/>;
-      case Tabs.BALOON: return <BaloonVisualization/>;
+      case Tabs.FLOWER: return <FlowerVisualization/>;
       default: return <GridVisualization/>;
     }
         

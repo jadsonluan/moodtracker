@@ -3,12 +3,6 @@ import { useState } from "react";
 const LAST_MONTH = 11;
 const FIRST_MONTH = 0;
 
-const dayShortNames = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'];
-const monthNames = [
-  'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-  'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-];
-
 const useCalendar = () => {
   const today = new Date();
   const [selectedDate, setSelectedDate] = useState(today);
@@ -94,10 +88,9 @@ const useCalendar = () => {
   }
 
   return {
+    today,
     calendarRows,
     selectedDate,
-    dayShortNames,
-    monthNames,
     getNextMonth,
     getPrevMonth,
   }

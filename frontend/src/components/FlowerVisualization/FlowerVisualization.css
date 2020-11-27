@@ -1,0 +1,43 @@
+.flower-visualization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flower-visualization h1 {
+  width: max-content;
+  border-bottom: 5px solid deepskyblue;
+  margin-bottom: 20px;
+}
+
+.flower-visualization-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 2px solid #252830;
+  background: white;
+  padding: 20px;
+}
+
+.flower-visualization-content > * {
+  margin: 5px;
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+.flower-visualization-content > *:hover {
+  transform: rotateY(360deg);
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  padding: 20px 70px;
+  background: #252830;
+  color: white;
+  width: 100%;
+  left: 0;
+}
+
+.credits a {
+  color: dodgerblue;
+}

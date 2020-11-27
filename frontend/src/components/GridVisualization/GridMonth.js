@@ -1,7 +1,7 @@
 import React from "react";
 import GridDay from "./GridDay";
 import "./GridMonth.css";
-import { findMoodsByDay, months as monthToName, numberOfDays } from "../../utils/mood-filter"
+import { findMoodsByDay, monthShortNames as monthToName, numberOfDays } from "../../utils/mood-filter"
 
 export default function GridMonth({ moods, month, year }) {
   const monthSize = numberOfDays(month, year)
