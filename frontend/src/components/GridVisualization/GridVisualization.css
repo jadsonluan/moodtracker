@@ -1,24 +1,41 @@
 .grid-visualization {
   display: flex;
   flex-direction: row;
+  background: white;
+  height: 80vh;
+  margin-bottom: 10px;
 }
 
-.grid-visualization .content {
+.grid-visualization .grid-content{
   display: flex;
   flex-direction: column;
-  background: white;
-  box-shadow: 1px 1px 1px 0 dodgerblue;
-  padding: 5px;
+  padding: 5px 5px 20px 5px;
   width: fit-content;
   height: fit-content;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: 3px dashed #EEE;
+  margin-left: 7px;
+}
+
+.grid-visualization .grid-left-border {
+  width: 8px;
+  border-right: 10px dotted grey;
+  height: 100%;
+}
+
+.grid-visualization h1 {
+  margin: 0 auto 20px auto;
+  height: fit-content;
+  border-bottom: 5px double deepskyblue;
 }
 
 .days-header {
   display: grid;
-  grid-template-columns: 40px repeat(31, 25px);
+  grid-template-columns: 25px repeat(31, 25px);
   grid-template-rows: 25px;
   grid-gap: 2px;
-  margin: 0 10px;
+  margin-left: 50px;
   font-family: 'Pacifico', cursive;
 }
 

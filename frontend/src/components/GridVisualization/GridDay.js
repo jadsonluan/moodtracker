@@ -3,7 +3,7 @@ import "./GridDay.css";
 import {mostFrequentTag} from "../../utils/mood-filter";
 
 export default function GridDay({ moods }) {
-  const DEFAULT_COLOR = "#EEE"
+  const DEFAULT_COLOR = "white"
 
   const tags = mostFrequentTag(moods)
   let background = DEFAULT_COLOR

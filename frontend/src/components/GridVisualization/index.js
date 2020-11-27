@@ -4,28 +4,8 @@ import { useMoods } from "../../context/MoodContext";
 import "./GridVisualization.css";
 import { findMoodsByMonth, months } from "../../utils/mood-filter";
 
-const feliz = { name: 'feliz', color: "green" }
-const puto = { name: 'puto', color: "red" }
-const triste = { name: 'triste', color: "blue" }
-const ansioso = { name: 'ansioso', color: "purple" }
-
-const choice = (array) => array[Math.floor(Math.random() * array.length)]
-
-const createMoods = () => {
-  const tags = [feliz, ansioso, triste, puto]
-  const firstDayByMonth = [...new Array(12)].map((month, i) => new Date(2020, i, 1))
-  console.log(firstDayByMonth)
-  const moods = []
-  firstDayByMonth.forEach(date => {
-    let mood = { _id: Math.random(), description: '', tag: choice(tags), created_at: date }
-    moods.push(mood)
-  })
-  return moods
-}
-
 export default function GridVisualization(props) {
   const { moods } = useMoods();
-  // const moods = createMoods()
   const year = new Date().getFullYear()
   const days = [...new Array(31)].map((_, day) => day + 1)
 
@@ -36,11 +16,13 @@ export default function GridVisualization(props) {
 
   return (
     <div className="grid-visualization">
-      <div className="content">
+      <div className="grid-left-border"></div>
+      <div className="grid-content">
+        <h1>{year}</h1>
         <div className="days-header">
           { days.map(day => <div className="day">{day}</div>)}
         </div>
-        <div>
+        <div className="days-content">
           { Object.values(moodsByMonth)
             .map((_moods, month) => 
               <GridMonth key={month} year={year} month={month} moods={_moods}/>) }
