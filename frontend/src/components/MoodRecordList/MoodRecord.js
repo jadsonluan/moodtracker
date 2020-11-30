@@ -1,5 +1,4 @@
 import React from "react";
-import Tag from "../Tag";
 import "./MoodRecord.css";
 
 function MoodRecord({mood}) {
@@ -12,9 +11,9 @@ function MoodRecord({mood}) {
   }
   return (
     <li className="mood-record">
-      <Tag color="black" name={getDate()}/>
-      <Tag color={mood.tag.color} name={mood.tag.name}/>
-      <div className="description">{mood.description}</div>
+      <div className="mood-record-date">{getDate()}</div>
+      <div className="mood-record-tag" style={{background: mood.tag.color}}>{mood.tag.name}</div>
+      <div className="mood-record-description">{mood.description}</div>
     </li>
   )
 }

@@ -45,6 +45,8 @@ export default function RegisterMoodPage(props) {
       toast.error("Tag não selecionada")
     } else if (!description) {
       toast.error("Descrição não informada")
+    } else if (description.length > 64) {
+      toast.error("Descrição muito longa. (Limite: 64 caracteres)")
     } else {
       createMood({ description, tag: selectedTag });
       toast.success("Humor registrado com sucesso!")
@@ -69,7 +71,7 @@ export default function RegisterMoodPage(props) {
 
       <div className="why">
         <h3>Por quê?</h3>
-        <input type="text" name="description" className="rounded-input" value={description} onChange={handleChange}/>
+        <input type="text" name="description" className="rounded-input" value={description} onChange={handleChange} placeholder="Breve descrição do seu humor"/>
       </div>
 
       <Button className="register-btn btn" value="Registrar" onClick={submit}/> 
