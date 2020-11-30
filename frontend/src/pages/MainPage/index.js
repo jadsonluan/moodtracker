@@ -6,7 +6,7 @@ import { useMoods } from "../../context/MoodContext";
 function MainPage(props) {
   const [search, setSearch] = useState("");
   const { moods } = useMoods();
-  let filteredMoods = moods;
+  let filteredMoods = moods.sort((mood1, mood2) => mood1.created_at < mood2.created_at);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
