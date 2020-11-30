@@ -56,7 +56,7 @@ export default function RegisterMoodPage(props) {
     MoodAPI.tags.findAll()
       .then(({data}) => setTags(data))
       .catch(error => console.log(error))
-  }, [])
+  }, [setTags])
 
   return (
     <div className="register-mood-page">

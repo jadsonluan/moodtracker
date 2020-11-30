@@ -4,7 +4,7 @@ import TagCaption from "./TagCaption";
 import "./Caption.css";
 
 function Caption(props) {
-  const {tags, setTags} = useTags();
+  const {tags} = useTags();
   return (
     <div className="caption">
       <h3>Legenda</h3>

@@ -40,13 +40,13 @@ function Calendar(props) {
             <tr key={i}>
               { row.map(col => {
                 return (
-                  <td key={col.value} className={`${col.classes}`}>
+                  <td key={col.date} className={`${col.classes}`}>
                     <div className="calendar-day">
                       <p>{col.value}</p>
                       <div className="calendar-moods">
                         { getTagsByDate(col.date).map(tag => (
                           <div 
-                            key={col.date} 
+                            key={tag._id} 
                             className="calendar-mood" 
                             style={{background: tag.color}}
                           />

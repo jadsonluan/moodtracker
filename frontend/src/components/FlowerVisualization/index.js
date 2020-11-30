@@ -1,10 +1,8 @@
 import React from 'react';
 import MoodFlower from './MoodFlower';
-import { 
-  findMoodsByDay, 
+import {
   findMoodsByMonth, 
-  monthNames, 
-  numberOfDays 
+  monthNames 
 } from "../../utils/mood-filter"
 import { useMoods } from "../../context/MoodContext";
 import "./FlowerVisualization.css";
@@ -15,8 +13,6 @@ function FlowerVisualization(props) {
   const today = new Date();
   const month = today.getMonth();
   const year = today.getFullYear();
-  const monthSize = numberOfDays(month, year);
-  const days = [...new Array(monthSize)].map((_, i) => i + 1);
   const monthMoods = findMoodsByMonth(moods, today);
 
   return (

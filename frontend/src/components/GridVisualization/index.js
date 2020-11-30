@@ -2,7 +2,7 @@ import React from "react";
 import GridMonth from "./GridMonth";
 import { useMoods } from "../../context/MoodContext";
 import "./GridVisualization.css";
-import { findMoodsByMonth, monthShortNames as months } from "../../utils/mood-filter";
+import { findMoodsByMonth } from "../../utils/mood-filter";
 
 export default function GridVisualization(props) {
   const { moods } = useMoods();
@@ -20,7 +20,7 @@ export default function GridVisualization(props) {
       <div className="grid-content">
         <h1>{year}</h1>
         <div className="days-header">
-          { days.map(day => <div className="day">{day}</div>)}
+          { days.map(day => <div key={day} className="day">{day}</div>)}
         </div>
         <div className="days-content">
           { Object.values(moodsByMonth)

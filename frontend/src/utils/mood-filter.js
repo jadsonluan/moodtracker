@@ -23,7 +23,7 @@ export function mostFrequentTag(moods) {
   tags.forEach(tag => frequency[tag.name] = frequency[tag.name] ? frequency[tag.name] + 1 : 1)
   if (Object.values(frequency).length !== 0) {
     const maxFrequency = Math.max(...Object.values(frequency))
-    const mostFrequents = Object.keys(frequency).filter(key => frequency[key] == maxFrequency)
+    const mostFrequents = Object.keys(frequency).filter(key => frequency[key] === maxFrequency)
     const _tags = tags.filter(tag => mostFrequents.includes(tag.name))
     const uniqueTags = removeDuplicates(_tags)
     return uniqueTags
