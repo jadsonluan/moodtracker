@@ -6,6 +6,7 @@ import { useMoods } from "../../context/MoodContext";
 function MainPage(props) {
   const [search, setSearch] = useState("");
   const { moods } = useMoods();
+  let filteredMoods = moods;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -13,6 +14,8 @@ function MainPage(props) {
       setSearch(value);
     }
   }
+
+  filteredMoods = moods.filter(mood => mood.description.includes(search) || mood.tag.name.includes(search))
 
   return (
     <div className="main-page">
@@ -24,7 +27,7 @@ function MainPage(props) {
         value={search} 
         onChange={handleChange} 
         placeholder="Filtrar por... (tag ou descrição)"/>
-      <MoodRecordList moods={moods} searchFor={search} />
+      <MoodRecordList moods={filteredMoods}/>
     </div>
   )
 }
