@@ -8,11 +8,11 @@ export default function GridVisualization(props) {
   const { moods } = useMoods();
   const year = new Date().getFullYear()
   const days = [...new Array(31)].map((_, day) => day + 1)
-
   const moodsByMonth = {}
-  months.map((_, month) => {
+
+  for (let month = 0; month < 12; month++) {
     moodsByMonth[month] = findMoodsByMonth(moods, new Date(year, month))
-  })
+  }
 
   return (
     <div className="grid-visualization">
