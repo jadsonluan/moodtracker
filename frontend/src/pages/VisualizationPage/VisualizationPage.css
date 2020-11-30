@@ -10,10 +10,6 @@
   margin-right: 4px;
 }
 
-.visualization-page .visualization {
-  
-}
-
 .visualization-page .active, .visualization-page .buttons > *:hover {
   background-color: dodgerblue;
   color: white;
@@ -23,6 +19,17 @@
 .visualization-header {
   display: flex;
   flex-direction: column;
-  width: max-content;
   margin-right: 20px;
+}
+
+.visualization-info {
+  margin-top: 20px;
+}
+
+.visualization-info p {
+  text-align: justify;
+  margin-top: 5px;
+  border: 2px double dodgerblue;
+  padding: 4px;
+  background: white;
 }

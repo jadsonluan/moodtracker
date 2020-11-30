@@ -9,9 +9,18 @@ import Caption from "../../components/Caption";
 import "./VisualizationPage.css";
 
 const Tabs = {
-  CALENDAR: "calendar",
-  GRID: "grid",
-  FLOWER: "flower"
+  CALENDAR: { 
+    name: "Calendário", 
+    description: "Essa visualização permite analisar seu humor durante um mês específico.\n O humor (tag) mostrado no calendário é o que foi mais frequente naquele dia. Se houver empate de ocorrência, todos os que empataram serão exibidos."
+  },
+  GRID: { 
+    name: "Grid",
+    description: ""
+  },
+  FLOWER: { 
+    name: "Flores",
+    description: ""
+  }
 }
 
 function VisualizationPage(props) {
@@ -36,7 +45,7 @@ function VisualizationPage(props) {
             .map((tab, id) => {
               return (
                 <Button 
-                  value={tab} 
+                  value={tab.name} 
                   key={id} 
                   className={activeTab === tab ? "active" : "" }
                   onClick={() => setActiveTab(tab)}
@@ -44,6 +53,10 @@ function VisualizationPage(props) {
               )
             })
           }
+        </div>
+        <div className="visualization-info">
+          <b>Descrição</b>
+          <p>{activeTab.description}</p>  
         </div>
         <Caption/>
       </div>
