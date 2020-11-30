@@ -11,15 +11,15 @@ import "./VisualizationPage.css";
 const Tabs = {
   CALENDAR: { 
     name: "Calendário", 
-    description: "Essa visualização permite analisar seu humor durante um mês específico.\n O humor (tag) mostrado no calendário é o que foi mais frequente naquele dia. Se houver empate de ocorrência, todos os que empataram serão exibidos."
+    description: "Essa visualização permite analisar seu humor durante um mês específico. O humor (tag) mostrado no calendário é o que foi mais frequente naquele dia. Se houver empate de ocorrência, todos os que empataram serão exibidos."
   },
   GRID: { 
     name: "Grid",
-    description: ""
+    description: "Essa visualização permite analisar seu humor durante o ano atual. O humor (tag) mostrado na célula do grid é o que foi mais frequente naquele dia. Se houver empate de ocorrência, apenas dois deles serão exibidos."
   },
   FLOWER: { 
     name: "Flores",
-    description: ""
+    description: "Essa visualização permite analisar seu humor durante o mês atual. Todos os registros de humor são exibidos."
   }
 }
 
