@@ -9,6 +9,12 @@
   margin-left: 10px;
 }
 
-.mood-record > * {
-  margin-right: 4px;
+.mood-record > :first-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.mood-record > :nth-child(2) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
