@@ -15,7 +15,9 @@ function MainPage(props) {
     }
   }
 
-  filteredMoods = moods.filter(mood => mood.description.includes(search) || mood.tag.name.includes(search))
+  const searchIncludes = (text) => text.toLowerCase().includes(search.toLowerCase());
+
+  filteredMoods = moods.filter(mood => searchIncludes(mood.tag.name) || searchIncludes(mood.description))
 
   return (
     <div className="main-page">
