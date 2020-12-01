@@ -11,6 +11,8 @@ h1, h2, h3, h4, h5, h6{
   color: #252830;
 }
 
+.content { padding-bottom: 50px; }
+
 .content > * {
   padding-left: 50px;
   padding-right: 50px;
