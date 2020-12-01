@@ -67,7 +67,9 @@ export default function RegisterMoodPage(props) {
       <TagSelect tags={tags} selected={selectedTag} selectTag={selectTag}/>
       <Button value="Criar tag" className="create-tag-btn btn" onClick={toggleFormVisibility}/>
 
-      { tagFormVisibility ? <TagForm createTag={createTag} hide={toggleFormVisibility}/> : undefined }
+      <div className="tag-form-container">
+        { tagFormVisibility ? <TagForm createTag={createTag} hide={toggleFormVisibility}/> : undefined }
+      </div>
 
       <div className="why">
         <h3>Por quê?</h3>

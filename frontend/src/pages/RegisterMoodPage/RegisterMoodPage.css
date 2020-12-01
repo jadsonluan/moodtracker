@@ -6,6 +6,11 @@
   width: 300px;
 }
 
+.tag-form-container {
+  position: fixed;
+  right: 30px;
+}
+
 .title {
   margin-bottom: 10px;
   text-align: center;
