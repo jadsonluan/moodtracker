@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-import MoodAPI from "../../services/mood.service";
-import TagAPI from "../../services/tag.service";
 import Button from "../../components/Button";
 import TagSelect from '../../components/TagSelect';
 import TagForm from '../../components/TagForm';
@@ -16,30 +14,12 @@ export default function RegisterMoodPage(props) {
   const [selectedTag, setSelectedTag] = useState(undefined)
   const [description, setDescription] = useState("");
   const [tagFormVisibility, setTagFormVisibility] = useState(false)
-  const {moods, setMoods} = useMoods()
-  const {tags, setTags} = useTags()
+  const {moods, createMood} = useMoods()
+  const {tags, createTag} = useTags()
   
   const selectTag = (tag) => setSelectedTag(tag)
   const toggleFormVisibility = () => setTagFormVisibility(!tagFormVisibility)
   const handleChange = (event) => setDescription(event.target.value);
-
-  const createMood = ({description, tag}) => {
-    MoodAPI.create({ description, tag_id: tag._id })
-      .then(({data}) => {
-        const mood = { ...data }
-        setMoods([...moods, mood]);
-      })
-      .catch(console.log)
-  }
-
-  const createTag = ({ name, color }) => {
-    TagAPI.create({ name, color })
-      .then(({data}) => {
-        const tag = { ...data }
-        setTags([...tags, tag]);
-      })
-      .catch(console.log)
-  }
 
   const submit = () => {
     if (selectedTag === undefined) {
@@ -55,11 +35,11 @@ export default function RegisterMoodPage(props) {
     }
   }
 
-  useEffect(() => {
-    TagAPI.findAll()
-      .then(({data}) => setTags(data))
-      .catch(error => console.log(error))
-  }, [setTags])
+  // useEffect(() => {
+  //   TagAPI.findAll()
+  //     .then(({data}) => setTags(data))
+  //     .catch(error => console.log(error))
+  // }, [setTags])
 
   return (
     <div className="register-mood-page">

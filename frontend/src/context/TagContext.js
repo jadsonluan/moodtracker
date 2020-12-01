@@ -14,8 +14,17 @@ export default function TagsProvider({children}) {
       .catch(error => console.log(error))
   }, [])
 
+  const createTag = ({ name, color }) => {
+    TagAPI.create({ name, color })
+      .then(({data}) => {
+        const tag = { ...data }
+        setTags([...tags, tag]);
+      })
+      .catch(console.log)
+  }
+
   return (
-    <TagsContext.Provider value={ { tags, setTags } }>
+    <TagsContext.Provider value={ { tags, createTag } }>
       {children}
     </TagsContext.Provider>
   )

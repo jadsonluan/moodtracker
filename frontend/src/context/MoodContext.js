@@ -14,8 +14,17 @@ export default function MoodsProvider({children}) {
       .catch(error => console.log(error))
   }, [])
 
+  const createMood = ({description, tag}) => {
+    MoodAPI.create({ description, tag_id: tag._id })
+      .then(({data}) => {
+        const mood = { ...data }
+        setMoods([...moods, mood]);
+      })
+      .catch(console.log)
+  }
+
   return (
-    <MoodsContext.Provider value={ { moods, setMoods } }>
+    <MoodsContext.Provider value={ { moods, createMood } }>
       {children}
     </MoodsContext.Provider>
   )
