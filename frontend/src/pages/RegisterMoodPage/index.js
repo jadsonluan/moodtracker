@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 import Button from "../../components/Button";
@@ -14,7 +14,7 @@ export default function RegisterMoodPage(props) {
   const [selectedTag, setSelectedTag] = useState(undefined)
   const [description, setDescription] = useState("");
   const [tagFormVisibility, setTagFormVisibility] = useState(false)
-  const {moods, createMood} = useMoods()
+  const {createMood} = useMoods()
   const {tags, createTag} = useTags()
   
   const selectTag = (tag) => setSelectedTag(tag)
