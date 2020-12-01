@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import MoodAPI from "../services/api";
+import MoodAPI from "../services/mood.service";
 
 const MoodsContext = createContext();
 
@@ -9,7 +9,7 @@ export default function MoodsProvider({children}) {
   const [moods, setMoods] = useState([])
 
   useEffect(() => {
-    MoodAPI.moods.findAll()
+    MoodAPI.findAll()
       .then(({data}) => setMoods(data))
       .catch(error => console.log(error))
   }, [])

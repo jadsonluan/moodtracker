@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import MoodAPI from "../services/api";
+import TagAPI from "../services/tag.service";
 
 const TagsContext = createContext();
 
@@ -9,7 +9,7 @@ export default function TagsProvider({children}) {
   const [tags, setTags] = useState([])
 
   useEffect(() => {
-    MoodAPI.tags.findAll()
+    TagAPI.findAll()
       .then(({data}) => setTags(data))
       .catch(error => console.log(error))
   }, [])

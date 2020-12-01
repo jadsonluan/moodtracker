@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-import MoodAPI from "../../services/api";
+import MoodAPI from "../../services/mood.service";
+import TagAPI from "../../services/tag.service";
 import Button from "../../components/Button";
 import TagSelect from '../../components/TagSelect';
 import TagForm from '../../components/TagForm';
@@ -23,7 +24,7 @@ export default function RegisterMoodPage(props) {
   const handleChange = (event) => setDescription(event.target.value);
 
   const createMood = ({description, tag}) => {
-    MoodAPI.moods.create({ description, tag_id: tag._id })
+    MoodAPI.create({ description, tag_id: tag._id })
       .then(({data}) => {
         const mood = { ...data }
         setMoods([...moods, mood]);
@@ -32,7 +33,7 @@ export default function RegisterMoodPage(props) {
   }
 
   const createTag = ({ name, color }) => {
-    MoodAPI.tags.create({ name, color })
+    TagAPI.create({ name, color })
       .then(({data}) => {
         const tag = { ...data }
         setTags([...tags, tag]);
@@ -55,7 +56,7 @@ export default function RegisterMoodPage(props) {
   }
 
   useEffect(() => {
-    MoodAPI.tags.findAll()
+    TagAPI.findAll()
       .then(({data}) => setTags(data))
       .catch(error => console.log(error))
   }, [setTags])
