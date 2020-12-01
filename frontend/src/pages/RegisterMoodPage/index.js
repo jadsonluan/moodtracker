@@ -35,12 +35,6 @@ export default function RegisterMoodPage(props) {
     }
   }
 
-  // useEffect(() => {
-  //   TagAPI.findAll()
-  //     .then(({data}) => setTags(data))
-  //     .catch(error => console.log(error))
-  // }, [setTags])
-
   return (
     <div className="register-mood-page">
       <h2 className="title">Como você está?</h2>
